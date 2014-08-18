@@ -1,7 +1,7 @@
 GetAndCleanData
 ===============
 
-run_analysis.R - Bill Wolf, Getting + Cleaning Data, Project 1
+###run_analysis.R - Bill Wolf, Getting + Cleaning Data, Project 1
 
 ###Here is what we were assigned to do:
 
