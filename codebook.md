@@ -1,5 +1,17 @@
+<h3>Codebook for output of run_analysis.R<h3>
+<h4>Bill Wolf<h4>
+
+<p>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals time.acc.XYZ and time.gyro.xyz. These time domain signals (prefix 'time' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (time.body.acc.xyz and time.gravity.acc.xya) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. </p>
+
+<p>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (time.body.acc.jerk.xyz and time.body.gyro.jerk.xyz). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (time.body.acc.mag, time.gravity.acc.mag, time.body.acc.jerk.mag, time.body.gyro.mag, time.body.gyro.jerk.mag).</p> 
+
+<p>Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing freq.body.acc.xyz, freq.body.acc.jerk.xyz, freq.body.gyro.xyz, freq.body.acc.jerk.mag, freq.body.gyro.mag, freq.body.gyro.jerk.mag. (Note the 'freq' to indicate frequency domain signals).</p> 
+
+<p>'.xyz' is used to denote 3-axial signals in the X, Y and Z directions.</p>
+<p>'.mean' is used to denote mean value and '.std' to denote standard deviation</p>
+
 <table>
-<tr><th>variable name</th><th>definition</th><th>R type</th><th>min value</th><th>max value</th></tr>
+<tr><th>variable name</th><th>definition</th><th>R type</th><th>min value seen</th><th>max value seen</th></tr>
 <tr><td>time.body.acc.mean.x</td><td>def</td><td>numeric</td><td>0.26229464948342</td><td>-0.0126895730832639</td></tr> 
 <tr><td>time.body.acc.mean.y</td><td>def</td><td>numeric</td><td>-0.0259232890342181</td><td>-0.0126895730832639</td></tr> 
 <tr><td>time.body.acc.mean.z</td><td>def</td><td>numeric</td><td>-0.120537934670272</td><td>-0.0126895730832639</td></tr> 
