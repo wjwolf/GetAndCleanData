@@ -52,15 +52,15 @@ My program is structured to do each of those 5 steps in that order:
 # Step 3: done - activity labels are applied!!
 ############################################
 
-############################################
+
 # Step 4: Apply descriptive labels to variables
-############################################
+
 	a. Replace the studies variable names with more descriptive labels in combined.subset data frame
 	   Make every name component lower case and dot separated; get rid of embedded punctuation
 	   For example the original name "fBodyAccJerk-std()-z" becomes "freq.body.acc.jerk.std.z"
-############################################
+
 # Step 4: done - variables have descriptive labels!!
-############################################
+
 
 ############################################
 # Step 5: create tidy data set of mean for each activity and subject
