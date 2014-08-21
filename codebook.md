@@ -1,23 +1,12 @@
 <h3>Codebook for output of run_analysis.R<h3>
 <h4>Bill Wolf<h4>
 
-<p>Data set is from:</p>
+<p>This codebook describes data tha is a transformation of original data produces by:</p>
 <code>
 [1] Davide Anguita, Alessandro Ghio, Luca Oneto, Xavier Parra and Jorge L. Reyes-Ortiz. Human Activity Recognition on Smartphones using a Multiclass Hardware-Friendly Support Vector Machine. International Workshop of Ambient Assisted Living (IWAAL 2012). Vitoria-Gasteiz, Spain. Dec 2012
 </code>
 
-<p>The experimenters worked with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. </p>
-
-<p>The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used.  </p>
-
-<p>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals time.acc.xyz and time.gyro.xyz. These time domain signals (prefix 'time' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (time.body.acc.xyz and time.gravity.acc.xya) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. </p>
-
-<p>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (time.body.acc.jerk.xyz and time.body.gyro.jerk.xyz). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (time.body.acc.mag, time.gravity.acc.mag, time.body.acc.jerk.mag, time.body.gyro.mag, time.body.gyro.jerk.mag).</p> 
-
-<p>Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing freq.body.acc.xyz, freq.body.acc.jerk.xyz, freq.body.gyro.xyz, freq.body.acc.jerk.mag, freq.body.gyro.mag, freq.body.gyro.jerk.mag. (Note the 'freq' to indicate frequency domain signals).</p> 
-
-<p>'.xyz' is used to denote 3-axial signals in the X, Y and Z directions.</p>
-<p>'.mean' is used to denote mean value and '.std' to denote standard deviation</p>
+<p>Here are the variables produced by my run_analysis.R:</p>
 
 <table>
 <tr><th>variable name</th><th>definition</th><th>R type</th><th>max value seen (activity)</th><th>max value seen (subject)</th></tr>
@@ -88,3 +77,40 @@
 <tr><td>freq.body.gyro.jerk.mag.mean</td><td>see below</td><td>numeric</td><td>-0.438007290282333</td><td>-0.0148081545344921</td></tr>                  
 <tr><td>freq.body.gyro.jerk.mag.std</td><td>see below</td><td>numeric</td><td>-0.486442976081671</td><td>-0.0148081545344921</td></tr>                 
 </table>
+
+<p>Each variable derives from data found in the original study, however both the variable names and values are the result of transformation</p>
+
+<p>The variable names were transformed as follows:
+<ul>
+<li>original study variables began with 't' or 'f' to denote time or frequency domain values. These are remapped here to 'time' and 'freq'</li>
+<li>original study variables contained 'Body' or 'Grav' to denote motion components body or gravity. These are remapped here to 'body' and 'grav'</li>
+<li>original study variables contained 'Acc' or 'Gyro' to denote source accelerometer or gyroscope. These are remapped here to 'acc' and 'gyro'</li>
+<li>some original study variables contained 'Jerk' to denote a derived value as described below. These are remapped here to 'jerk'</li>
+<li>original study variables contained 'Mean()' or 'Sd()' to denote mean or standard deviation values. These are remapped here to 'mean' and 'std'</li>
+<li>some original study variables contained a suffix of X,Y,Z to denote an axial component. These are remapped here to 'x','y','z'</li>
+</ul>
+
+<p>The values  were transformed as follows:</p>
+<ul>original study test and training data sets were combined into a single data set</ul>
+<ul>per assignment instructions I calculated the average value of the measurements with the same activity and sample values</p>
+<ul>the acitivty values are WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING</ul> 
+<ul>the sample values are 1 to 30 (e.g. 1, 2, 3, ... 30)</ul>
+<ul>these average values are presented in my data set which is a matrix where the row names are the activity and sample labels, and the colum names are the variables shown in the table above</p>
+
+<br>
+
+<p>Here is additional background information from the original study</p>
+
+<p>The experimenters worked with a group of 30 volunteers within an age bracket of 19-48 years. Each person performed six activities (WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING) wearing a smartphone (Samsung Galaxy S II) on the waist. Using its embedded accelerometer and gyroscope, we captured 3-axial linear acceleration and 3-axial angular velocity at a constant rate of 50Hz. The experiments have been video-recorded to label the data manually. The obtained dataset has been randomly partitioned into two sets, where 70% of the volunteers was selected for generating the training data and 30% the test data. </p>
+
+<p>The sensor signals (accelerometer and gyroscope) were pre-processed by applying noise filters and then sampled in fixed-width sliding windows of 2.56 sec and 50% overlap (128 readings/window). The sensor acceleration signal, which has gravitational and body motion components, was separated using a Butterworth low-pass filter into body acceleration and gravity. The gravitational force is assumed to have only low frequency components, therefore a filter with 0.3 Hz cutoff frequency was used.  </p>
+
+<p>The features selected for this database come from the accelerometer and gyroscope 3-axial raw signals time.acc.xyz and time.gyro.xyz. These time domain signals (prefix 'time' to denote time) were captured at a constant rate of 50 Hz. Then they were filtered using a median filter and a 3rd order low pass Butterworth filter with a corner frequency of 20 Hz to remove noise. Similarly, the acceleration signal was then separated into body and gravity acceleration signals (time.body.acc.xyz and time.gravity.acc.xya) using another low pass Butterworth filter with a corner frequency of 0.3 Hz. </p>
+
+<p>Subsequently, the body linear acceleration and angular velocity were derived in time to obtain Jerk signals (time.body.acc.jerk.xyz and time.body.gyro.jerk.xyz). Also the magnitude of these three-dimensional signals were calculated using the Euclidean norm (time.body.acc.mag, time.gravity.acc.mag, time.body.acc.jerk.mag, time.body.gyro.mag, time.body.gyro.jerk.mag).</p> 
+
+<p>Finally a Fast Fourier Transform (FFT) was applied to some of these signals producing freq.body.acc.xyz, freq.body.acc.jerk.xyz, freq.body.gyro.xyz, freq.body.acc.jerk.mag, freq.body.gyro.mag, freq.body.gyro.jerk.mag. (Note the 'freq' to indicate frequency domain signals).</p> 
+
+<p>'.xyz' is used to denote 3-axial signals in the X, Y and Z directions.</p>
+<p>'.mean' is used to denote mean value and '.std' to denote standard deviation</p>
+
