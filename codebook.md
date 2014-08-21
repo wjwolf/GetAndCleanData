@@ -91,11 +91,12 @@
 </ul>
 
 <p>The values  were transformed as follows:</p>
-<ul>original study test and training data sets were combined into a single data set</ul>
-<ul>per assignment instructions I calculated the average value of the measurements with the same activity and sample values</p>
-<ul>the acitivty values are WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING</ul> 
-<ul>the sample values are 1 to 30 (e.g. 1, 2, 3, ... 30)</ul>
-<ul>these average values are presented in my data set which is a matrix where the row names are the activity and sample labels, and the colum names are the variables shown in the table above</p>
+<ul>
+<li>original study test and training data sets were combined into a single data set</li>
+<li>per assignment instructions I calculated the average value of the measurements with the same activity and sample values</li>
+<li>the acitivty values are WALKING, WALKING_UPSTAIRS, WALKING_DOWNSTAIRS, SITTING, STANDING, LAYING</li> 
+<li>the sample values are 1 to 30 (e.g. 1, 2, 3, ... 30)</li>
+<li>these average values are presented in my data set which is a matrix where the row names are the activity and sample labels, and the column names are the variables shown in the table above</li></ul>
 
 <br>
 
