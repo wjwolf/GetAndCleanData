@@ -170,8 +170,8 @@ improvedColumnNames<-colnames(combined.subset)
 
 for (i in 1:length(improvedColumnNames)) {
 
-  ## correct BodyBody to Body
-#  improvedColumnNames[i]<-gsub(pattern="BodyBody",replacement="Body",improvedColumnNames[i])
+  ## correct BodyBody to Body (fix what looks like a naming mistake in the data)
+  improvedColumnNames[i]<-gsub(pattern="BodyBody",replacement="Body",improvedColumnNames[i])
     
   ## normalize t to time; f to freq
   improvedColumnNames[i]<-sub(pattern="^t",replacement="time.",improvedColumnNames[i])
@@ -238,12 +238,12 @@ rownames(subject_mean)<-colnames(combined.subset)[1:(length(colnames(combined.su
 # combine the activity and subject mean data for output
 final.data<-rbind(t(activity_mean),t(subject_mean))
 
-# output the data
+# output the data to current working directory
 write.table(final.data,"UCI_HAR_Data_output_wjwolf.txt",row.name=FALSE)
 
 ############################################
 # Step 5: all done - we have tidy data set of activity and subject mean values!!
-############################################
+############################################ 
 
 
 
