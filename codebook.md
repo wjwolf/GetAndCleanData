@@ -7,6 +7,7 @@
 </code>
 
 <p>Here are the variables produced by my run_analysis.R:</p>
+(<p>(Even though it may not be typical I chose to include dots in the variable names to make reading significantly easier)</p>
 
 <table>
 <tr><th>variable name</th><th>definition</th><th>R type</th><th>max value seen (activity)</th><th>max value seen (subject)</th></tr>
